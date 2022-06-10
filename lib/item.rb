@@ -18,7 +18,8 @@ class Item
           all_items << item_temporary
         end
         return all_items
-      end
+    end
+
 end
 
 
