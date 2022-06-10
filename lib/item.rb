@@ -1,6 +1,6 @@
 require 'csv'
+require_relative'controller'
 
-# CSV.read("item.csv")
 
 class Item
     attr_accessor :id, :name 
@@ -9,6 +9,12 @@ class Item
         @id = id
         @name = name
     end
+
+
+    # def self.index
+    #     items = Item.all
+    # end
+
 
     def self.all
         item_temporary = []
