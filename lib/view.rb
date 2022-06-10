@@ -34,14 +34,33 @@ class View
     end
 
 
+    def self.all(all_items)
+      puts "\n Voici l'item choisi :"
+        all_items.each do |item|
+          puts "#{item.id} #{item.name} #{item.price} #{item.quantity} #{item.brand}"
+        end
+    end
+
     def menu_choice
       puts "\n Que souhaites-tu faire ?"
-      puts "1. Rester sur cette page d'inventaire"
-      puts "2. Revenir sur la page d'accueil" 
+      puts "1. Rester sur cette page d'item"
+      puts "2. Revenir sur la page d'accueil"
+    end
+
+    def menu_choice_item
+      puts "\n Que souhaites-tu faire ?"
+      puts "1. Accéder à un item"             
+      puts "2. Revenir sur la page d'accueil"
     end
 
     def aufWiedersehen
       puts "\n À bientôt !"
+    end
+
+    def item_show(item)
+      puts "\n Voici l'item choisi :"
+      puts "#{item.id} #{item.name} #{item.price} #{item.quantity} #{item.brand}"
+
     end
 
 end
