@@ -5,13 +5,26 @@ require_relative'controller'
 class Item
     attr_accessor :id, :name, :price, :quantity, :brand 
 
-    def initialize(id, name, price, quantity,brand)
+    def initialize(id, name, price, quantity, brand)
         @id = id
         @name = name
         @price = price
         @quantity = quantity
         @brand = brand
     end
+
+    
+class OnlineShopItems < Items
+    def show(item)
+    puts 'This are the Online shop items'
+    end
+end
+
+class BrickAndMortarShopItems < Items
+    def show(item)
+        puts 'This are the Brick  and Mortar shop items'
+    end
+end
 
 
     # def self.index
