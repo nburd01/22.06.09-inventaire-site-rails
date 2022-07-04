@@ -63,7 +63,7 @@ class Controller
 
     end
 
-# -----------------------------------------------------
+# ------------------CRUD---------------------------
 
 
 
@@ -73,13 +73,31 @@ class Controller
     end
 
  
-    def  create
-        # rentrer les attributs ici
+    def create
+        item = Item.create(post_params)
+        redirect_to_item_path(item.id)
+    end
+
+    def show
+        @item = Item.find(params[:id])
+    end
+
+    def edit
+        @item = Item.find(params[:id])
+    end
+    
+      
+    def update
+    @item = Item.find(params[:id])
+        @item.update(post_params)
+        redirect_to articles_path
     end
 
  
-    def  delete
-        # rentrer les attributs ici
+    def destroy
+        item = Item.create(post_params)
+        @item.destroy
+        redirect_to_item_path
     end
 
     private 
@@ -89,4 +107,9 @@ class Controller
             id = gets.chomp.to_i
         end
     end
+
+    def post_params
+        post_params = params.require(:item).permit(:id,:name,:price,:quantity,:brand)
+    end
+
 end
