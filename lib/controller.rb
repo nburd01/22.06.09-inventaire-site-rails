@@ -51,7 +51,16 @@ class Controller
                     #   when 3
                     #     puts "Tu as choisi de delete un item" 
                     #     @controller.delete_item
+            when 2
+                    puts "Tu as choisi de créer un item" 
+                    @view.create_item  
+                    break
             
+            when 3
+                    puts "Tu as choisi de delete un item" 
+                    view.delete_item   
+                    break
+
             when 4
                 @view.aufWiedersehen
                 break
@@ -85,7 +94,7 @@ class Controller
     def edit
         @item = Item.find(params[:id])
     end
-    
+
       
     def update
     @item = Item.find(params[:id])
@@ -111,5 +120,7 @@ class Controller
     def post_params
         post_params = params.require(:item).permit(:id,:name,:price,:quantity,:brand)
     end
+
+    # -------------------------------------------------
 
 end

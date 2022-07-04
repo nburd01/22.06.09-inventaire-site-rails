@@ -20,8 +20,8 @@ class View
     def home_menu
       puts "\n Que souhaites-tu faire ?"
       puts "1. Je veux consulter l'inventaire \n"
-      # puts "2. Je veux créer un item (pas opérationnel)" 
-      # puts "3. Je veux delete un item (pas opérationnel)" 
+      puts "2. Je veux créer un item (pas opérationnel)" 
+      puts "3. Je veux delete un item (pas opérationnel)" 
       puts "4. Je veux quitter l'app"
     end
 
@@ -57,10 +57,22 @@ class View
       puts "\n À bientôt !"
     end
 
+# -------------------CRUD------------------------------
+
+
     def item_show(item)
       puts "\n Voici l'item choisi :"
       puts "#{item.id} #{item.name} #{item.price} #{item.quantity} #{item.brand}"
+    end
+            
+    def create_item(item)
+      puts "\n Créons un article :"
+      # puts "#{item.id} #{item.name} #{item.price} #{item.quantity} #{item.brand}"
+    end
 
+    def delete_item(item)
+      puts "\n Détruisons un article :"
+      # puts "#{item.id} #{item.name} #{item.price} #{item.quantity} #{item.brand}"
     end
 
 end
